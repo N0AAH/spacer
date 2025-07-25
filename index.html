@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Spacer</title>
+
+  <link rel="shortcut icon" href='assets/templates/img/favicon.png'>
+
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+
+  <script src="assets/js/jquery/jquery.js"></script>
+  <script src="assets/js/jquery/jquery.collision.js"></script>
+  <script src="assets/js/jquery/jquery.ui.draggable.collision.js"></script>
+  <script src="assets/js/jquery/jquery.ui.core.js"></script>
+  <script src="assets/js/jquery/jquery.ui.widget.js"></script>
+  <script src="assets/js/jquery/jquery.ui.mouse.js"></script>
+  <script src="assets/js/jquery/jquery.ui.draggable.js"></script>
+  <script src="assets/js/jquery/jquery.ui.selectable.js"></script>
+  <script src="assets/js/mapper.js"></script>
+</head>
+<body>
+				<button id="reset_data" style="position: absolute; top: 10px; right: 10px; z-index: 999; cursor: pointer;">
+    🔄 Очистити усе
+</button>
+	<div class="cargo_space">
+		<div class="space selection">
+			<div class="selection_space_title">Оберіть або внесіть розмір вантажного простору</div>
+			<div class="panel">
+				<div class="inputs">
+					<label><span class="dimension">Довжина:</span><input type="text" name="space_length" required><span class="unit">м</span></label>
+					<label><span class="dimension">Ширина:</span><input type="text" name="space_width" required><span class="unit">м</span></label>
+					<label><span class="dimension">Висота:</span><input type="text" name="space_height" required><span class="unit">м</span></label>
+					<div class="space_button"><div class="create"><span>Створити простір</span></div></div>
+				</div>
+				<div class="space_templates">
+					<div class="item"><span class="space_type">Тент 86м³</span><span class="dimensions">13.65м x 2.48м x 2.65м</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="space selected">
+			<div class="selected_space_title">Обраний вантажний простір</div>
+			<div class="panel">
+				<div class="selected_space_data"></div>	
+				<div class="space_button"><div class="edit"><span>Змінити</span></div></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="calculation">		
+		<div class="cargo_place">
+			<div class="cargo selection">
+				<div class="cargo_selection_title">Додати вантажне місце</div>
+				<div class="panel">
+					<div class="inputs">
+						<label><span class="dimension">Довжина:</span><input type="text" name="cargo_length" ><span class="unit">м</span></label>
+						<label><span class="dimension">Ширина:</span><input type="text" name="cargo_width" ><span class="unit">м</span></label>
+						<label><span class="dimension">Висота:</span><input type="text" name="cargo_height" ><span class="unit">м</span></label>
+						<label><span class="dimension">Кількість:</span><input type="number" name="cargo_quantity" value="1" >
+							</label>
+						<div class="cargo_button"><div class="add"><span>Додати</span></div></div>
+					</div>
+					<div class="cargo_templates">
+						<div class="item"><span class="cargo_type">Європаллета</span><span class="dimensions">1.2м x 0.8м x 0.2м</span></div>
+						<div class="item"><span class="cargo_type">Фінська</span><span class="dimensions">1.2м x 1.0м x 0.2м</span></div>
+						<div class="item"><span class="cargo_type">Американська</span><span class="dimensions">1.2м x 1.2м x 0.2м</span></div>							
+						<div class="created_cargo_places">
+							<div class="created_cargo_places_title">Створені вантажні місця</div>
+							<hr>
+							<div class="items"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="visualization">
+			<div class="visualization_title">Розміщення вантажу</div>
+			<div class="visualization_body">
+				<div class="canvas" unselectable="on"></div>
+				<button id="delete_selected" class="bulk_action">
+	<svg width="20" height="20" fill="currentColor" viewBox="0 0 23 23">
+		<path d="M9 3v1H4v2h1v14a2 2 0 002 2h10a2 2 0 002-2V6h1V4h-5V3H9zm8 3v14H7V6h10zM9 8v10h2V8H9zm4 0v10h2V8h-2z"/>
+	</svg></button>
+
+
+			</div>	
+			
+
+			
+		</div>
+	</div>		
+<div id="ruler-tooltip"></div>
+</body>
+</html>
